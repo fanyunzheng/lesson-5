@@ -13,3 +13,7 @@ class Nezha(Lijing):
         self.name = name
         self.weapons = weapons
         self.power = power
+        
+    def count_fight(self,weapon,weapon_power):
+        self.weapons.append(weapon)
+        self.power += weapon_power
