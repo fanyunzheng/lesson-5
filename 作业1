@@ -1,0 +1,47 @@
+class Bank:
+    balance = 100
+
+    def menu(self):
+
+        while True:
+            print("""
+1.查询余额
+2.存款
+3.取款
+4.退出
+                """)
+            try:
+                action = int(input('请输入指令:'))
+            except Exception:
+                print('此为无效指令')
+
+
+            if action == 1:
+                self.balance_inquiry()
+
+            elif action == 2:
+                self.deposit()
+
+            elif action == 3:
+                self.withdraw()
+
+            elif action ==4:
+                print('已退出，感谢使用！')
+                break
+            else:
+                print('Error!请重新输入！')
+
+    def balance_inquiry(self):
+
+        print(self.balance)
+
+    def deposit(self):
+        money_deposit = float(input('请输入您打算存入的金额:'))
+        self.balance += money_deposit
+
+    def withdraw(self):
+        money_withdraw = float(input('请输入您打算取出的金额:'))
+        if money_withdraw > self.balance:
+            print('余额不足!')
+        else:
+            self.balance -= money_withdraw
