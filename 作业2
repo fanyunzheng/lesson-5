@@ -1,0 +1,15 @@
+class Lijing:
+    def __init__(self,name,weapons=[],power=10):
+        self.name = name
+        self.weapons = weapons
+        self.power = power
+
+    def count_fight(self,weapon,weapon_power):
+        self.weapons.append(weapon)
+        self.power += weapon_power
+
+class Nezha(Lijing):
+    def __init__(self,name,weapons=['混天绫','乾坤圈'],power=50):
+        self.name = name
+        self.weapons = weapons
+        self.power = power
